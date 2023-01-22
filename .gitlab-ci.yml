@@ -1,0 +1,22 @@
+stages:
+ - test
+ - build
+test:
+ stage: test
+ image: golang:latest
+ script:
+ - go test .
+build_manual:
+ stage: build
+ except:
+ - master
+ image: docker:latest
+ script:
+ - docker build .
+build:
+ stage: build
+ only:
+ - master
+ image: docker:latest
+ script:
+ - docker build .

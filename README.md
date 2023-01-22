@@ -58,9 +58,9 @@ sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab
 sudo gitlab-runner start
 sudo gitlab-runner register --url http://gitlab.localdomain/ --registration-token 9vtjaLAmUx_vBeYw4cAV
 ```
-![Проект и репозиторий. Часть 1](https://github.com/StanislavBaranovskii/8-3-hw/blob/branch/img/8-3-1-1.png "Проект и репозиторий. Часть 1")
-![Проект и репозиторий. Часть 2](https://github.com/StanislavBaranovskii/8-3-hw/blob/branch/img/8-3-1-1.png "Проект и репозиторий. Часть 2")
-![Настройки runner](https://github.com/StanislavBaranovskii/8-3-hw/blob/branch/img/8-3-1-3.png "Настройки раннера")
+![Проект и репозиторий. Часть 1](https://github.com/StanislavBaranovskii/8-3-hw/blob/master/img/8-3-1-1.png "Проект и репозиторий. Часть 1")
+![Проект и репозиторий. Часть 2](https://github.com/StanislavBaranovskii/8-3-hw/blob/master/img/8-3-1-1.png "Проект и репозиторий. Часть 2")
+![Настройки runner](https://github.com/StanislavBaranovskii/8-3-hw/blob/master/img/8-3-1-3.png "Настройки раннера")
 
 ---
 
@@ -76,10 +76,12 @@ sudo gitlab-runner register --url http://gitlab.localdomain/ --registration-toke
 * `скриншоты с успешно собранными сборками.`
 
 ```
+git remote add origin https://github.com/StanislavBaranovskii/8-3-hw.git
+git branch -M master
+git push -u origin master
 ```
 
 `При необходимости прикрепитe сюда скриншоты
 ![Название скриншота 2](ссылка на скриншот 2)`
 
-[Коммит 8.3 Task 2](https://github.com/StanislavBaranovskii/8-1-hw/commit/c6239fa17f8e7426de3ff7b0c4d6d5606b2d8bd9)
 ---

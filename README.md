@@ -76,12 +76,37 @@ sudo gitlab-runner register --url http://gitlab.localdomain/ --registration-toke
 * `скриншоты с успешно собранными сборками.`
 
 ```
-git remote add origin https://github.com/StanislavBaranovskii/8-3-hw.git
-git branch -M master
-git push -u origin master
+git remote rename origin old-origin
+git remote add origin http://gitlab.localdomain/gitlab-instance-65255979/gitlab-my-local.git
+git push -u origin --all
+git push -u origin --tags
+```
+Листинг файла gitlab-ci.yml
+```
+stages:
+ - test
+ - build
+test:
+ stage: test
+ image: golang:latest
+ script:
+ - go test .
+build_manual:
+ stage: build
+ except:
+ - master
+ image: docker:latest
+ script:
+ - docker build .
+build:
+ stage: build
+ only:
+ - master
+ image: docker:latest
+ script:
+ - docker build .
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
+![Настройки runner](https://github.com/StanislavBaranovskii/8-3-hw/blob/master/img/8-3-2-1.png "Настройки раннера")
 
 ---
